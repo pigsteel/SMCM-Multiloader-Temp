@@ -17,13 +17,16 @@
     "entrypoints": {
         "main": [
             "com.github.pigsteel.smcm.SMCMFabric"
+        ],
+        "client": [
+            "com.github.pigsteel.smcm.SMCMFabricClient"
         ]
     },
     "mixins": [
         "${mod_id}.mixins.json",
         "${mod_id}.fabric.mixins.json"
     ],
-    "accessWidener": "26.1.2-smcm.classtweaker",
+    "accessWidener": "${mod_id}.classtweaker",
     "depends": {
         "fabricloader": ">=${fabric_loader_version}",
         "fabric-api": "*",
