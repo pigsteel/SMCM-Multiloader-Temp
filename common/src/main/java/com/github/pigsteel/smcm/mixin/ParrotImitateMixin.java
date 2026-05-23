@@ -1,9 +1,8 @@
 package com.github.pigsteel.smcm.mixin;
 
 import com.github.pigsteel.smcm.SMCM;
-import com.github.pigsteel.smcm.registry.EntityTypeRegistry;
+import com.github.pigsteel.smcm.registry.smcm$EntityType;
 import com.github.pigsteel.smcm.registry.Sounds;
-import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.parrot.Parrot;
@@ -13,7 +12,6 @@ import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.HashMap;
@@ -29,11 +27,11 @@ public class ParrotImitateMixin {
 
     @Inject(method = "getImitatedSound", at = @At("HEAD"))
     private static void smcm$injectMimics(EntityType<?> id, CallbackInfoReturnable<SoundEvent> cir) {
-        if (!MOB_SOUND_MAP.containsKey(EntityTypeRegistry.FROSTBITTEN)) {
+        if (!MOB_SOUND_MAP.containsKey(smcm$EntityType.FROSTBITTEN)) {
             Map<EntityType<?>, SoundEvent> map = new HashMap<>(MOB_SOUND_MAP);
 
-            map.put(EntityTypeRegistry.FROSTBITTEN, Sounds.PARROT_IMITATE_FROSTBITTEN);
-            map.put(EntityTypeRegistry.RECLAIMED, Sounds.PARROT_IMITATE_RECLAIMED);
+            map.put(smcm$EntityType.FROSTBITTEN, Sounds.PARROT_IMITATE_FROSTBITTEN);
+            map.put(smcm$EntityType.RECLAIMED, Sounds.PARROT_IMITATE_RECLAIMED);
 
             MOB_SOUND_MAP = map;
 

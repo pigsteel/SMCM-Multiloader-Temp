@@ -29,20 +29,19 @@ public class SMCM {
         // your own abstraction layer. You can learn more about this in our provided services class. In this example
         // we have an interface in the common code and use a loader specific implementation to delegate our call to
         // the platform specific approach.
-        if (Services.PLATFORM.isModLoaded("examplemod")) {
+        if (Services.PLATFORM.isModLoaded("smcm")) {
 
-            LOGGER.info("Hello to examplemod");
+            LOGGER.info("Hello to SMCM");
         }
         
         
         Sounds.init();
-        EntityTypeRegistry.registerModEntityTypes();
-        EntityTypeRegistry.registerAttributes();
-        EntityTypeRegistry.registerSpawnRules();
-        DataComponents.initialize();
-        EntitySpawns.AddSpawns();
-        ItemRegistry.initialize();
-        LootTables.initialize();
+        smcm$EntityType.registerModEntityTypes();
+        //smcm$EntityType.registerAttributes();
+        smcm$EntityType.registerSpawnRules();
+        DataComponents.init();
+        smcm$Items.init();
+        LootTables.init();
     }
 
     public static Identifier id(String path) {

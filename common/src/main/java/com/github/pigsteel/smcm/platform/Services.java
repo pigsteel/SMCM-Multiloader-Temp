@@ -1,7 +1,6 @@
 package com.github.pigsteel.smcm.platform;
 
-
-import com.github.pigsteel.smcm.Constants;
+import com.github.pigsteel.smcm.SMCM;
 import com.github.pigsteel.smcm.platform.services.IPlatformHelper;
 
 import java.util.ServiceLoader;
@@ -25,7 +24,7 @@ public class Services {
         final T loadedService = ServiceLoader.load(clazz, Services.class.getClassLoader())
                 .findFirst()
                 .orElseThrow(() -> new NullPointerException("Failed to load service for " + clazz.getName()));
-        Constants.LOG.debug("Loaded {} for service {}", loadedService, clazz);
+        SMCM.LOGGER.debug("Loaded {} for service {}", loadedService, clazz);
         return loadedService;
     }
 }

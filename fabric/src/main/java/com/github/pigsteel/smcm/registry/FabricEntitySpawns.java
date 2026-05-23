@@ -7,13 +7,10 @@ import net.fabricmc.fabric.api.biome.v1.ModificationPhase;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.SpawnGroupData;
-import net.minecraft.world.level.biome.BiomeManager;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 
-// TODO: Entire class is borked :(
-public class EntitySpawns {
+public class FabricEntitySpawns {
     public static void AddSpawns() {
         // Reweighting zombies and frostbitten to function like Strays
         BiomeModifications.create(Identifier.fromNamespaceAndPath(SMCM.MOD_ID,"adjust_winter_zombie_spawns"))
@@ -32,7 +29,7 @@ public class EntitySpawns {
 
                             spawnSettings.addSpawn(
                                     MobCategory.MONSTER,
-                                    new MobSpawnSettings.SpawnerData(EntityTypeRegistry.FROSTBITTEN, 4, 4),
+                                    new MobSpawnSettings.SpawnerData(smcm$EntityType.FROSTBITTEN, 4, 4),
                                     80
                             );
                         }
@@ -55,7 +52,7 @@ public class EntitySpawns {
 
                             spawnSettings.addSpawn(
                                     MobCategory.MONSTER,
-                                    new MobSpawnSettings.SpawnerData(EntityTypeRegistry.RECLAIMED, 4, 4),
+                                    new MobSpawnSettings.SpawnerData(smcm$EntityType.RECLAIMED, 4, 4),
                                     85
                             );
                         }

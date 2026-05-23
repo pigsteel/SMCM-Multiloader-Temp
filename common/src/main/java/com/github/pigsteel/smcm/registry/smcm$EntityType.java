@@ -6,9 +6,7 @@ import com.github.pigsteel.smcm.entity.illager.Enchanter;
 import com.github.pigsteel.smcm.entity.skeleton.Sunken;
 import com.github.pigsteel.smcm.entity.zombie.Frostbitten;
 import com.github.pigsteel.smcm.entity.zombie.Reclaimed;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.core.Registry;
-import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
@@ -18,14 +16,12 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Heightmap;
 
-public class EntityTypeRegistry {
+public class smcm$EntityType {
     public static EntityType<Bruiser> BRUISER;
     public static EntityType<Enchanter> ENCHANTER;
     public static EntityType<Frostbitten> FROSTBITTEN;
     public static EntityType<Reclaimed> RECLAIMED;
     public static EntityType<Sunken> SUNKEN;
-
-
 
     private static <T extends Entity> EntityType<T> register(String name, EntityType.Builder<T> builder) {
         ResourceKey<EntityType<?>> key = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(SMCM.MOD_ID, name));
@@ -66,15 +62,7 @@ public class EntityTypeRegistry {
         );
     }
 
-    // TODO: You know what to do here
-    public static void registerAttributes() {
-        FabricDefaultAttributeRegistry.register(BRUISER, Bruiser.createAttributes());
-        FabricDefaultAttributeRegistry.register(FROSTBITTEN, Frostbitten.createAttributes());
-        FabricDefaultAttributeRegistry.register(RECLAIMED, Reclaimed.createAttributes());
-        FabricDefaultAttributeRegistry.register(ENCHANTER, Enchanter.createAttributes());
-        FabricDefaultAttributeRegistry.register(SUNKEN, Sunken.createAttributes());
-    }
-
+    // has to become fabric only
     public static void registerSpawnRules() {
         SpawnPlacements.register(
                 FROSTBITTEN,

@@ -9,7 +9,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 public class DataComponents {
     public static DataComponentType<Reclaimed.HeadFlower> RECLAIMED_HEAD_FLOWER;
 
-    public static void initialize() {
+    public static void init() {
         RECLAIMED_HEAD_FLOWER = Registry.register(
                 BuiltInRegistries.DATA_COMPONENT_TYPE,
                 SMCM.id("reclaimed/head_flower"),

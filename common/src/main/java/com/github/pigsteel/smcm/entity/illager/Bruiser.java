@@ -1,6 +1,5 @@
 package com.github.pigsteel.smcm.entity.illager;
 
-import com.github.pigsteel.smcm.registry.EntityTypeRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.component.DataComponents;
@@ -21,13 +20,10 @@ import net.minecraft.world.entity.animal.golem.IronGolem;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.creaking.Creaking;
 import net.minecraft.world.entity.monster.illager.AbstractIllager;
-import net.minecraft.world.entity.monster.illager.Evoker;
-import net.minecraft.world.entity.monster.illager.Vindicator;
 import net.minecraft.world.entity.npc.villager.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -38,7 +34,6 @@ import net.minecraft.world.level.block.entity.BannerPatterns;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jspecify.annotations.Nullable;
 
-import static net.minecraft.world.entity.raid.Raid.getBannerComponentPatch;
 import static net.minecraft.world.entity.raid.Raid.getOminousBannerTemplate;
 
 public class Bruiser extends AbstractIllager {

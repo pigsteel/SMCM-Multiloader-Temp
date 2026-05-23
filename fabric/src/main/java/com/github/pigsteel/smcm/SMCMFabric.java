@@ -12,7 +12,7 @@ public class SMCMFabric implements ModInitializer {
         // project.
 
         // Use Fabric to bootstrap the Common mod.
-        Constants.LOG.info("Hello Fabric world!");
-        CommonClass.init();
+        SMCM.LOGGER.info("Hello Fabric world!");
+        SMCM.init();
     }
 }
